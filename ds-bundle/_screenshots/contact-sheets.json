@@ -1,0 +1,12 @@
+[
+  {
+    "sheet": 1,
+    "components": [
+      "Badge",
+      "Button",
+      "Card",
+      "Eyebrow",
+      "Heading"
+    ]
+  }
+]

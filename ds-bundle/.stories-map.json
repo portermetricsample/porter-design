@@ -1,0 +1,58 @@
+{
+  "global": "PorterDS",
+  "pkg": "@porter/design-system",
+  "pkgDir": "/Users/juan/porter-design-system",
+  "extraEntries": [],
+  "exported": [
+    "Badge",
+    "Button",
+    "Card",
+    "Eyebrow",
+    "Heading"
+  ],
+  "storybookStatic": null,
+  "keyRecipe": 7,
+  "cfgSliceGlobal": "a139d95ad8ab0a8ba08b44a258c54602e36090304087f48fe923c61aa5a8ae08",
+  "components": [
+    {
+      "name": "Badge",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "deb8f43a5f8bac39",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Button",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "79e4ae6040502933",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Card",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "73ab56c9d2a5f251",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Eyebrow",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "37a19b1d5e4de0bb",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Heading",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "436dd99e16deb1b5",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    }
+  ]
+}

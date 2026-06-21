@@ -1,0 +1,39 @@
+{
+  "shape": "package",
+  "styleSha": "7cf00bd4a6a706c1e34267cd6bd22d77cfc0ddfbff5a82eab4f15e01e3363ea0",
+  "renderHashes": {
+    "Badge": "ae7e050f0b1c87b8",
+    "Button": "a6ee38180a32f569",
+    "Card": "a50a241a06cba4e4",
+    "Eyebrow": "13314c587c45292c",
+    "Heading": "f00e2619ad82bc37"
+  },
+  "sourceKeys": {
+    "Badge": "deb8f43a5f8bac39",
+    "Button": "79e4ae6040502933",
+    "Card": "73ab56c9d2a5f251",
+    "Eyebrow": "37a19b1d5e4de0bb",
+    "Heading": "436dd99e16deb1b5"
+  },
+  "keyRecipe": 7,
+  "scriptsSha": "5741b18a21a90534",
+  "sourceHashes": {
+    "components/general/Badge/Badge.jsx": "d2b641a4decf",
+    "components/general/Badge/Badge.d.ts": "a36a6e793935",
+    "components/general/Badge/Badge.prompt.md": "bebca733a6cb",
+    "components/general/Button/Button.jsx": "1229125f87d7",
+    "components/general/Button/Button.d.ts": "0ef87e7a4728",
+    "components/general/Button/Button.prompt.md": "23d91ce3133e",
+    "components/general/Card/Card.jsx": "6da97b736882",
+    "components/general/Card/Card.d.ts": "f3d3a866aa60",
+    "components/general/Card/Card.prompt.md": "76340796968e",
+    "components/general/Eyebrow/Eyebrow.jsx": "46dc89fb35f0",
+    "components/general/Eyebrow/Eyebrow.d.ts": "130ef4aa4704",
+    "components/general/Eyebrow/Eyebrow.prompt.md": "a1475c277c0d",
+    "components/general/Heading/Heading.jsx": "30adce62cd2d",
+    "components/general/Heading/Heading.d.ts": "9a90af48f33f",
+    "components/general/Heading/Heading.prompt.md": "36b639996fb7"
+  },
+  "auxSha": "f8109fadc3960b99",
+  "bundleSha12": "39adca5c4820"
+}

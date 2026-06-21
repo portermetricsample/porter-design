@@ -1,0 +1,50 @@
+HOW TO ADD THIS DESIGN SYSTEM TO CLAUDE DESIGN
+================================================
+
+You are on the "Set up your design system" screen. Here is exactly what to do.
+
+------------------------------------------------
+1) COMPANY NAME AND BLURB  (the top text box)
+------------------------------------------------
+Copy and paste this in:
+
+Porter Metrics — marketing analytics platform. Brand kit (Koho-inspired):
+massive Inter typography, solid brand colors (purple #6701e6 primary, plus
+pink, aqua, yellow, dark), zero decoration. Components: Button, Card, Badge,
+Eyebrow, Heading.
+
+------------------------------------------------
+2) ADD THE CODE  (pick ONE of these)
+------------------------------------------------
+
+EASIEST — "Link code from your computer":
+   Click "browse" (or drag) and select THIS folder:
+   Porter Design System   (the folder this file is inside)
+
+OR — "Link code from GitHub":
+   Paste the GitHub link I created for you (see the chat for the exact URL).
+
+Either one works. The computer option needs no login.
+
+------------------------------------------------
+3) FONTS / LOGOS / ASSETS  (optional)
+------------------------------------------------
+No font files are needed — Inter + IBM Plex Mono load from Google Fonts.
+
+LOGOS + ICONS are now included. This folder has an "assets" folder:
+   assets/brand/       -> Porter mark + wordmark
+   assets/connectors/  -> Meta, Google Ads, GA4, Search Console, HubSpot,
+                          Shopify, Instagram, Google Sheets, WordPress icons
+
+These are inside the code folder, so the "Link code from your computer" /
+GitHub option already picks them up. If you ALSO want to drag them into the
+"Add fonts, logos and assets" box, select the files inside assets/brand and
+assets/connectors.
+
+------------------------------------------------
+THEN
+------------------------------------------------
+Continue / submit. Claude will read the code and build your design system.
+
+The "design-notes/how-to-use.md" file in this folder explains how the
+components work, in case anyone on your team wants the details.

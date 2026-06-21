@@ -143,10 +143,12 @@ Example: `Conversions grew <span class="pds-chip pds-chip--pos">▲14%</span> on
 5. Deltas: positive = aqua/green, negative = `--porter-pink`. No red/green stoplight outside conditional-formatting tables.
 6. Data tables: include a **Δ vs prior-period column by default** (delta chips, `.pds-chip--pos/--neg`); name a source/channel → show its logo (above).
 
-## 9. Reference templates (`templates/`)
+## 9. Reference templates — MOVED (2026-06-21)
 
-Each family ships all themes. Browse via `Design System - Porter.html`.
-`report-blocks*` (charts/KPIs/tables/maps), `report-text-blocks*` (editorial), `report-slides*` (16:9 deck), `marketing-dashboard*`, `executive-report*`. Suffixes: `-type`=cream, `-white`=white, `-type-dark`/`-azul`=blue, `-morado*`=purple.
+The report / dashboard / slide templates now live in **`~/porter-reporting/templates/`**
+(they are assembly, owned by Reporting — see `porter-reporting/RULES.md`). This repo's
+`templates/` keeps only `chart-primitives/` (empty, data-less building blocks). Suffixes on
+the moved families: `-type`=cream, `-white`=white, `-type-dark`/`-azul`=blue, `-morado*`=purple.
 
 ## 10. Number formatting
 

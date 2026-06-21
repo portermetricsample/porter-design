@@ -17,8 +17,9 @@ fonts, spacing, or components.
    - `tokens/typography.css` — Bricolage (display/headings) + Hanken (body)
    - `tokens/spacing.css` — space/radius scale
    - `tokens/components.css` — `.pds-*` component classes
-3. **`templates/`** — copy/follow these as reference implementations. Every family ships
-   all 4 themes and paints only from tokens.
+3. **`templates/`** — keeps only `chart-primitives/` (empty, data-less component blocks).
+   The report / dashboard / slide templates were moved to `~/porter-reporting/templates/`
+   (2026-06-21) — they are assembly, not appearance. This repo is tokens + empty components.
 
 @AGENTS.md
 

@@ -1,0 +1,294 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/Badge/**",
+              "components/Button/**",
+              "components/Card/**",
+              "components/Eyebrow/**",
+              "components/Heading/**",
+              "ui_kits/marketing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter|IBM Plex Mono))/i]",
+        "message": "Font not provided by the design system. Available: Inter, IBM Plex Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|children|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: variant, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:background|bordered|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: background, bordered, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Heading'] > JSXAttribute > JSXIdentifier[name!=/^(?:level|as|children|key|ref|className|style|children)$/]",
+        "message": "<Heading> doesn't accept that prop. Declared props: level, as, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Heading'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:h1|h2|h3)$/]",
+        "message": "<Heading> as must be one of 'h1' | 'h2' | 'h3'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Heading": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--aqua-100",
+      "--aqua-200",
+      "--aqua-300",
+      "--aqua-400",
+      "--aqua-500",
+      "--aqua-700",
+      "--border-hairline",
+      "--border-width",
+      "--container-max",
+      "--cream",
+      "--font-alt",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--neutral-200",
+      "--neutral-50",
+      "--neutral-950",
+      "--pink-100",
+      "--pink-200",
+      "--pink-400",
+      "--pink-500",
+      "--pink-700",
+      "--porter-aqua",
+      "--porter-black",
+      "--porter-cream",
+      "--porter-dark",
+      "--porter-muted",
+      "--porter-pink",
+      "--porter-purple",
+      "--porter-white",
+      "--porter-yellow",
+      "--purple-100",
+      "--purple-300",
+      "--purple-500",
+      "--purple-600",
+      "--purple-800",
+      "--purple-900",
+      "--purple-950",
+      "--radius-2xl",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--section-pad-y",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-brand",
+      "--surface-card",
+      "--surface-dark",
+      "--surface-lavender",
+      "--surface-page",
+      "--surface-paper",
+      "--text-accent",
+      "--text-body",
+      "--text-muted",
+      "--text-on-dark",
+      "--text-strong",
+      "--type-badge-size",
+      "--type-badge-tracking",
+      "--type-body-leading",
+      "--type-body-size",
+      "--type-display-leading",
+      "--type-display-size",
+      "--type-display-tracking",
+      "--type-display-weight",
+      "--type-eyebrow-size",
+      "--type-eyebrow-tracking",
+      "--type-h1-leading",
+      "--type-h1-size",
+      "--type-h1-tracking",
+      "--type-h1-weight",
+      "--type-h2-leading",
+      "--type-h2-size",
+      "--type-h2-tracking",
+      "--type-h2-weight",
+      "--type-small-size",
+      "--weight-black",
+      "--weight-bold",
+      "--weight-heavy",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold",
+      "--yellow-100",
+      "--yellow-400"
+    ],
+    "tokenKinds": {
+      "--porter-purple": "color",
+      "--porter-dark": "color",
+      "--porter-pink": "color",
+      "--porter-yellow": "color",
+      "--porter-aqua": "color",
+      "--porter-cream": "color",
+      "--porter-black": "color",
+      "--porter-white": "color",
+      "--porter-muted": "color",
+      "--purple-950": "color",
+      "--purple-900": "color",
+      "--purple-800": "color",
+      "--purple-600": "color",
+      "--purple-500": "color",
+      "--purple-300": "color",
+      "--purple-100": "color",
+      "--pink-700": "color",
+      "--pink-500": "color",
+      "--pink-400": "color",
+      "--pink-200": "color",
+      "--pink-100": "color",
+      "--aqua-700": "color",
+      "--aqua-500": "color",
+      "--aqua-400": "color",
+      "--aqua-300": "color",
+      "--aqua-200": "color",
+      "--aqua-100": "color",
+      "--yellow-400": "color",
+      "--yellow-100": "color",
+      "--cream": "color",
+      "--neutral-50": "color",
+      "--neutral-200": "color",
+      "--neutral-950": "color",
+      "--text-strong": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-on-dark": "font",
+      "--text-accent": "font",
+      "--surface-page": "color",
+      "--surface-paper": "color",
+      "--surface-card": "color",
+      "--surface-lavender": "color",
+      "--surface-dark": "color",
+      "--surface-brand": "color",
+      "--border-hairline": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-alt": "font",
+      "--font-mono": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-heavy": "font",
+      "--weight-black": "font",
+      "--type-display-size": "font",
+      "--type-display-weight": "font",
+      "--type-display-leading": "font",
+      "--type-display-tracking": "font",
+      "--type-h1-size": "font",
+      "--type-h1-weight": "font",
+      "--type-h1-leading": "font",
+      "--type-h1-tracking": "font",
+      "--type-h2-size": "font",
+      "--type-h2-weight": "font",
+      "--type-h2-leading": "font",
+      "--type-h2-tracking": "font",
+      "--type-body-size": "font",
+      "--type-body-leading": "font",
+      "--type-small-size": "font",
+      "--type-eyebrow-size": "font",
+      "--type-eyebrow-tracking": "font",
+      "--type-badge-size": "font",
+      "--type-badge-tracking": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-2xl": "radius",
+      "--radius-pill": "radius",
+      "--container-max": "spacing",
+      "--section-pad-y": "spacing",
+      "--border-width": "spacing"
+    },
+    "fontFamilies": [
+      "IBM Plex Mono",
+      "Inter"
+    ]
+  }
+}
