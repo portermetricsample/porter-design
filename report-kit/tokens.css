@@ -1,0 +1,241 @@
+/* =====================================================================
+   Marketing Report — Design Tokens
+   Koho-inspired palette · Bricolage Grotesque + Hanken Grotesk
+   Drop this into your project and import it once:
+     <link rel="stylesheet" href="tokens.css">
+   ===================================================================== */
+
+/* ---- Fonts (free, Google Fonts) -----------------------------------
+   Add this <link> to your <head> alongside this stylesheet:
+   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+-------------------------------------------------------------------- */
+
+:root {
+  /* ---- Surfaces ---- */
+  --paper:        #FFF8EC;  /* page background — warm cream */
+  --card:         #FFFFFF;  /* card / panel background */
+
+  /* ---- Text / ink ---- */
+  --ink:          #1C1230;  /* primary text */
+  --ink-soft:     #6A5E80;  /* secondary / body paragraph text */
+  --ink-mute:     #9A8FAE;  /* tertiary text, labels, captions */
+
+  /* ---- Purple (primary brand) ---- */
+  --purple:       #3A1E63;  /* deep purple — headings on dark, fills */
+  --purple-2:     #6B3FA0;  /* mid purple */
+  --purple-soft:  #EDE6F6;  /* tint — pills, track backgrounds */
+
+  /* ---- Lime — the ONLY green in the system: spotlight highlight ONLY (mark, chart peak, CTA) ---- */
+  --accent:       #CDFB52;  /* electric lime — one highlight / CTA, sparing */
+  --accent-deep:  #9BC400;
+
+  /* ---- Eyebrows / section labels ---- */
+  --eyebrow:      #7C3AED;  /* vivid purple — matches the Porter dashboard */
+
+  /* ---- Categorical palette — chart series / breakdown colors (NEVER green; lime is highlight only) ---- */
+  --cat-1:        #7C3AED;  /* vivid purple — primary / largest series */
+  --cat-2:        #2DD4BF;  /* bright aquamarine (Porter's, NOT a deepened teal) */
+  --cat-3:        #EC4899;  /* pink */
+  --cat-4:        #FBBF24;  /* yellow */
+  --cat-other:    #9A8FAE;  /* muted gray — small slices / "other" */
+
+  /* ---- (deprecated) jewel green — kept for back-compat only; eyebrows now use --eyebrow ---- */
+  --jewel:        #1FA971;
+  --jewel-soft:   #E3F6EE;
+
+  /* ---- Lines / borders ---- */
+  --line:         #EBE2CF;
+  --line-2:       #E7DECB;
+
+  /* ---- Delta semantics (% variations vs previous period) ----
+     good = aqua (bright blue), bad = cherry red. NOT green — green is
+     reserved for eyebrows/highlight above. *-ink = legible text on light. */
+  --good:         #2DD4BF;  /* aqua — positive delta indicator/arrow */
+  --good-ink:     #0E8FA8;  /* aqua-cyan (reads BLUE, distinct from eyebrow green) — positive delta TEXT on light */
+  --good-soft:    #E0F7F3;  /* aqua tint — pill background */
+  --bad:          #FF5F57;  /* bright cherry red (the one already in the system) — negative delta */
+  --bad-ink:      #CC2A24;  /* deep cherry — negative delta TEXT on light */
+  --bad-soft:     #FCEBEC;  /* cherry tint — pill background */
+
+  /* ---- Conditional formatting — DIVERGING stoplight (bad→good), cell tints (always dark text) ----
+     Use for performance metrics vs peers/benchmark. Same cherry→green meaning as delta pills. */
+  --cf-1:         #FCE7E9;  /* worst — cherry tint */
+  --cf-2:         #FCEEE6;
+  --cf-3:         #FCF6DD;  /* mid — yellow tint */
+  --cf-4:         #EEF8E4;
+  --cf-5:         #E3F7EE;  /* best — green tint */
+
+  /* ---- Heat — SEQUENTIAL magnitude (low→high), single-hue purple tints ----
+     Use for neutral volume metrics (impressions, spend); encodes "how much", no good/bad. */
+  --heat-1:       #F4F0FB;
+  --heat-2:       #EAE2F6;
+  --heat-3:       #DED2F1;
+  --heat-4:       #D1C0EC;
+  --heat-5:       #C3ADE6;
+  --heat-6:       #B59AE0;
+
+  /* ---- Typography ---- */
+  --font-display: 'Bricolage Grotesque', sans-serif;  /* headings, numbers */
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif; /* body text */
+
+  /* ---- Radii ---- */
+  --radius-sm:    12px;
+  --radius-md:    18px;
+  --radius-lg:    20px;
+  --radius-xl:    30px;
+  --radius-pill:  999px;
+}
+
+/* =====================================================================
+   Base
+   ===================================================================== */
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  text-wrap: balance;
+}
+p, li { text-wrap: pretty; }
+
+/* =====================================================================
+   Type scale (as used in the report)
+   ===================================================================== */
+
+/* Section eyebrow — small uppercase vivid-purple label above a section */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+/* Big cover title */
+.title-xl {
+  font-family: var(--font-display);
+  font-size: 58px;
+  line-height: 1.0;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+/* Section heading */
+.title-lg {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* Card / chart heading */
+.title-md {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Lead paragraph — the larger opening sentence */
+.lead {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Body paragraph — THE "Most of that lift came from..." style */
+.body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.62;
+  font-weight: 400;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+
+/* Big metric number (KPI tiles, table totals) */
+.metric {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Label / caption */
+.label {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+.caption {
+  font-size: 11.5px;
+  color: var(--ink-mute);
+}
+
+/* Inline highlight (lime marker on a word/number) */
+.mark {
+  background: var(--accent);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* =====================================================================
+   Components
+   ===================================================================== */
+
+/* Card / panel */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.card--lg { border-radius: var(--radius-lg); padding: 24px; }
+
+/* Dark purple card (e.g. ROAS tile, "what's next") */
+.card--purple {
+  background: var(--purple);
+  border: 1px solid var(--purple);
+  color: var(--paper);
+}
+
+/* Delta / change pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+.pill--up    { background: var(--good-soft);   color: var(--good-ink); }
+.pill--down  { background: var(--bad-soft);    color: var(--bad-ink); }
+.pill--brand { background: var(--purple-soft);  color: var(--purple-2); }
+
+/* Progress / bar track + fill (ROAS bars) */
+.bar-track { height: 12px; background: var(--purple-soft); border-radius: var(--radius-pill); }
+.bar-fill  { height: 100%; background: var(--purple); border-radius: var(--radius-pill); }
+.bar-fill--accent { background: var(--accent); }
+
+/* Lime CTA banner */
+.cta {
+  background: var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  color: var(--purple);
+}
