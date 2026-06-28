@@ -1,0 +1,105 @@
+/* ============================================================================
+   Porter Design — Search Terms Page skin
+   Styles the .stp-* class hooks emitted by porter-reporting
+   (components/google-ads/search-terms-page). Tokens-only, theme-aware (all 4
+   themes). No hard-coded theme hexes — every colour resolves from themes.css.
+
+   Pair with the flattened tokens for a standalone report:
+       <link rel="stylesheet" href="porter-tokens.css">   (dist/porter-tokens.css)
+       <link rel="stylesheet" href="search-terms-page.css">
+   ============================================================================ */
+
+.stp-component { display: block; font-family: var(--font-hanken); color: var(--text-body); }
+
+/* ── criterion filter bar ──────────────────────────────────────────────── */
+.stp-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.stp-pill {
+  border: 1px solid var(--card-border); background: var(--surface-card); color: var(--text-body);
+  border-radius: var(--radius-pill); padding: 6px 14px; font: 600 13px var(--font-hanken); cursor: pointer;
+}
+.stp-pill--active { background: var(--porter-purple, #6701e6); color: #fff; border-color: var(--porter-purple, #6701e6); }
+
+/* ── grid of keyword cards ─────────────────────────────────────────────── */
+.stp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 14px; align-items: start; margin-top: 14px; }
+.stp-card { background: var(--surface-card); border: 1px solid var(--card-border); border-radius: var(--radius-xl); overflow: hidden; }
+.stp-card[hidden] { display: none !important; }
+
+/* ── split-table: header/footer/body-rows are display:table so columns line
+      up; tbody is a fixed-height scroll area → every card is the same height ── */
+.stp-table { width: 100%; border-collapse: collapse; }
+.stp-table thead, .stp-table tfoot, .stp-table tbody tr { display: table; width: 100%; table-layout: fixed; }
+.stp-body { display: block; height: 235px; overflow-y: auto; scrollbar-gutter: stable; }
+.stp-table th, .stp-table td { padding: 9px 12px; text-align: right; font-size: 13px; color: var(--text-body); vertical-align: middle; }
+.stp-c-term { width: 31%; text-align: left; white-space: normal; }
+.stp-c-spend { width: 14%; } .stp-c-conv { width: 12%; } .stp-c-cpa { width: 15%; }
+.stp-c-tags { width: 28%; text-align: left; }
+.stp-row td { border-bottom: 1px solid var(--card-border); }
+.stp-row[hidden] { display: none !important; }
+.stp-body tr:last-child td { border-bottom: 0; }
+
+/* merged header row */
+.stp-head th {
+  background: var(--surface-sunken); text-align: right; font: 600 11px var(--font-hanken);
+  text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); border-bottom: 1px solid var(--card-border);
+}
+.stp-head th.stp-c-term, .stp-head th.stp-c-tags { text-align: left; }
+.stp-kw { font-family: var(--font-bricolage); font-weight: 700; font-size: 15px; color: var(--text-title); text-transform: none; letter-spacing: 0; margin-right: 8px; }
+
+/* match-type chip — Exact = aqua, Phrase = purple, Broad = yellow */
+.stp-mt { font: 700 10px var(--font-hanken); text-transform: uppercase; letter-spacing: .04em; border-radius: var(--radius-pill); padding: 2px 7px; vertical-align: middle; }
+.stp-mt--exact  { background: var(--tint-b-bg);      color: var(--tint-b-text); }
+.stp-mt--phrase { background: var(--callout-info-bg); color: var(--callout-info-tx); }
+.stp-mt--broad  { background: var(--callout-warn-bg); color: var(--callout-warn-tx); }
+
+/* status dot + term */
+.stp-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+.stp-dot--on { background: var(--good); }
+.stp-dot--off { background: var(--text-muted); opacity: .45; }
+.stp-term { color: var(--text-title); }
+
+/* footer total — hidden while a criterion filter is active */
+.stp-foot td { background: var(--surface-sunken); font-weight: 700; color: var(--text-title); border-top: 1px solid var(--card-border); }
+.stp-component[data-filtering="1"] .stp-foot { display: none; }
+
+/* tags cell: chips on one nowrap CLIPPED row; the ⋯ button never clips; open → wrap (height only) */
+.stp-tags { display: flex; gap: 4px; align-items: center; }
+.stp-tags-list { display: flex; gap: 5px; flex-wrap: nowrap; overflow: hidden; min-width: 0; }
+.stp-tags--open .stp-tags-list { flex-wrap: wrap; }
+.stp-tag { font: 600 11px var(--font-hanken); border-radius: var(--radius-pill); padding: 2px 8px; white-space: nowrap; }
+.stp-tag--purple { background: var(--callout-info-bg); color: var(--callout-info-tx); }   /* Branded */
+.stp-tag--pink   { background: var(--callout-risk-bg); color: var(--callout-risk-tx); }   /* Irrelevant */
+.stp-tag--aqua   { background: var(--tint-b-bg);       color: var(--tint-b-text); }       /* Competitor */
+.stp-tag--yellow { background: var(--callout-warn-bg); color: var(--callout-warn-tx); }   /* Duplicate */
+.stp-tag--green  { background: var(--callout-win-bg);  color: var(--callout-win-tx); }    /* Opportunity */
+.stp-more { flex: 0 0 auto; border: none; background: transparent; color: var(--text-muted); font: 700 14px var(--font-hanken); cursor: pointer; padding: 0 2px; line-height: 1; }
+
+/* ── insights card ─────────────────────────────────────────────────────── */
+.stp-insights { margin-top: 14px; background: var(--surface-card); border: 1px solid var(--card-border); border-radius: var(--radius-xl); padding: 20px 22px; }
+.stp-insights-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+.stp-eyebrow { font: 700 11px var(--font-bricolage); text-transform: uppercase; letter-spacing: .1em; color: var(--eyebrow-color); margin: 0 0 3px; }
+.stp-insights-title { font-family: var(--font-bricolage); font-weight: 800; font-size: 20px; color: var(--text-title); margin: 0; }
+.stp-insights-note { color: var(--text-muted); font-size: 12px; margin: 3px 0 0; }
+.stp-total { text-align: right; white-space: nowrap; }
+/* total: brand purple on light, lime on dark (the spec's contract) */
+.stp-total-num { display: block; font-family: var(--font-bricolage); font-weight: 800; font-size: 32px; color: var(--total-accent); line-height: 1; }
+[data-theme="blue"] .stp-total-num, [data-theme="purple"] .stp-total-num { color: var(--highlight-fill); }
+.stp-total-label { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); margin-top: 2px; }
+.stp-split { display: block; font-size: 11.5px; color: var(--text-muted); margin-top: 5px; }
+.stp-rows { list-style: none; margin: 14px 0 0; padding: 0; }
+.stp-irow { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-top: 1px solid var(--card-border); }
+.stp-chip { flex: 0 0 104px; text-align: center; font: 700 11px var(--font-hanken); border-radius: var(--radius-pill); padding: 4px 0; }
+.stp-chip--purple { background: var(--callout-info-bg); color: var(--callout-info-tx); }
+.stp-chip--pink   { background: var(--callout-risk-bg); color: var(--callout-risk-tx); }
+.stp-chip--aqua   { background: var(--tint-b-bg);       color: var(--tint-b-text); }
+.stp-chip--yellow { background: var(--callout-warn-bg); color: var(--callout-warn-tx); }
+.stp-chip--green  { background: var(--callout-win-bg);  color: var(--callout-win-tx); }
+.stp-chip--amber  { background: var(--cf-2); color: var(--ink, #1a0340); }  /* Wasteful — peach on the diverging ramp, fixed dark ink (ramp is light on all themes) */
+.stp-imid { flex: 1; min-width: 0; }
+.stp-iaction { display: block; font-weight: 700; color: var(--text-title); font-size: 13.5px; }
+.stp-irat { display: block; color: var(--text-muted); font-size: 12.5px; margin-top: 2px; }
+.stp-imoney { flex: 0 0 130px; text-align: right; }
+.stp-idollars { display: block; font-family: var(--font-bricolage); font-weight: 800; font-size: 17px; color: var(--text-title); }
+.stp-isub { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); }
+.stp-est { font: 600 9.5px var(--font-hanken); text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); border: 1px solid var(--card-border); border-radius: 4px; padding: 0 4px; vertical-align: middle; }
+
+.stp-empty { padding: 24px; color: var(--text-muted); }
